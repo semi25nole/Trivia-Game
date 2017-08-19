@@ -1,0 +1,21 @@
+header{
+	text-align: center;
+	font-family: 'Cormorant SC', serif;
+	font-size: 80px;
+	font-weight: bold;
+	color: black;
+	opacity: 0.6;
+}
+
+body{
+	background-image: url("../images/got.jpg");
+	background-repeat: none;
+}
+
+#main {
+	position: relative;
+	top: 35px;
+	right: 75px;
+	height: 400px;
+	width: 800px;
+}
