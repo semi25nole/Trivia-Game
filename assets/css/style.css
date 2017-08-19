@@ -19,3 +19,12 @@ body{
 	height: 400px;
 	width: 800px;
 }
+
+#main:hover {
+	opacity: 0.2;
+}
+
+button:hover {
+	box-shadow: 3px 3px 2px black;
+}
+
