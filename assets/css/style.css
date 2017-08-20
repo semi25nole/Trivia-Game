@@ -20,11 +20,29 @@ body{
 	width: 800px;
 }
 
-#main:hover {
-	opacity: 0.2;
-}
-
 button:hover {
 	box-shadow: 3px 3px 2px black;
 }
 
+.btn-xs {
+	bottom: 120px;
+	left: 350px;
+	opacity: 0.7;
+}
+
+#top {
+	position: relative;
+	clear: both;
+}
+
+#bottom {
+	position: relative;;
+	clear: both;
+}
+
+.start-button {
+	position: absolute;
+	bottom: 150px;
+	left: 350px;
+	z-index: 15;
+}
