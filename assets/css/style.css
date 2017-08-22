@@ -12,12 +12,17 @@ body{
 	background-repeat: none;
 }
 
-#main {
+.jumbotron {
 	position: relative;
 	top: 25px;
 	right: 75px;
 	height: 400px;
 	width: 800px;
+}
+
+input {
+	position: relative;
+	top: 25px;
 }
 
 button:hover {
@@ -45,4 +50,9 @@ button:hover {
 	bottom: 150px;
 	left: 350px;
 	z-index: 15;
+}
+
+#title {
+	font-family: papyrus, cursive;
+	font-weight: bold;
 }

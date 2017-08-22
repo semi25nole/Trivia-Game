@@ -2,55 +2,46 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-
-	<title>Trivia Game</title>
-
-	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
-	
+    <meta charset="utf-8">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
 </head>
 
 <body>
-
-	<header id="head">Can You Take The Throne?</header>
-
-	<div class="container">
-
-		<div class="row" id="top">
-
-			<div class="col-md-12">
-
-				<div class="text-center">
-        			<button class="btn btn-default btn-xs theme-button"><span class="glyphicon glyphicon-music"></span>Play Theme!</button>
-       			 	<button class="btn btn-default btn-xs pause-button"><span class="glyphicon glyphicon-pause"></span>Pause Song</button>
-      			</div>
-
-			</div> <!--This closes the col div-->
-
-		<div class="row" id="bottom">
-
-			<div class="col-md-12">
-
-				<div id="main">
-					<button class="btn btn-default"><img src="./assets/images/throne.jpg" height="400px" width="800px"></button>
-					<button class="btn btn-default btn-xs start-button">Click to Start</button>
-				</div>
-
-			</div> <!--This closes the 2nd col div-->
-
-		</div> <!--This closes the row div-->
-
-	</div> <!--This closes the container fluid div-->
-
-	<script 
-		src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
- 	</script>
-	<script 
-		src="./assets/js/app.js">
-	</script>
-
+    <header id="head">Can You Take The Throne?</header>
+    <div class="container">
+        <div class="row" id="top">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <button class="btn btn-default btn-xs theme-button"><span class="glyphicon glyphicon-music"></span>Play Theme!</button>
+                    <button class="btn btn-default btn-xs pause-button"><span class="glyphicon glyphicon-pause"></span>Pause Song</button>
+                </div>
+            </div>
+            <!--This closes the col div-->
+            <div class="row" id="bottom">
+                <div class="col-md-12">
+                	<div class="jumbotron">
+                		<div class="text-center">
+                    		<h1 id="title">Which House does Samwell Tarly belong?</h1>
+                    			<input id="option1" type="button" value="House Tarly">
+                    			<input id="option2" type="button" value="House Tyrell">
+								<input id="option3" type="button" value="House Stark">
+								<input id="option4" type="button" value="House Lannister">
+                    	</div> <!--This closes the text-center div-->
+                    </div> <!--This closes the jumbotron div-->
+                </div>
+                <!--This closes the 2nd col div-->
+            </div>
+            <!--This closes the row div-->
+        </div>
+        <!--This closes the container fluid div-->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+        </script>
+        <script src="./assets/js/app.js">
+        </script>
 </body>
+
 </html>
