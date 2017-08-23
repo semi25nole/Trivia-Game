@@ -10,22 +10,7 @@ var questions = [
     answer: "Theon Greyjoy",
     options: ["Sansa Stark", "Jon Snow", "Theon Greyjoy", "Tyrion Lannister"],
   },
-  {
-    question: "What akjflksjf",
-    answer: "House Tarly",
-    options: ["House Tarly", "House Tyrell", "House Stark", "House Lannister"],
-  },
-  {
-    question: "What akjflksjf",
-    answer: "House Tarly",
-    options: ["House Tarly", "House Tyrell", "House Stark", "House Lannister"],
-  },
-  {
-    question: "What akjflksjf",
-    answer: "House Tarly",
-    options: ["House Tarly", "House Tyrell", "House Stark", "House Lannister"],
-  },
-];
+  ];
 
 
 var currentQ = 0;
@@ -46,19 +31,22 @@ $(".pause-button").on("click", function() { //Once the user presses the Pause Th
     audioElement.pause();
 });
 
-$(document).on("click", function() {
-  if((questions.answer === questions[currentQ].options[i])) {
-    $('.jumbotron').html('<img src="./assets/images/correct1.gif" />');
+$(document).on("click", ".option", function() { // On the click of button with class .option
+  for( var i = 0; i < questions[currentQ].options.length; i++){
+  if ((questions[0].answer === questions[0].options[i])) { //If questions.answer === a string in questions.options
+    $('.jumbotron').html('<img src="./assets/images/correct1.gif" />'); //Change this code
     $('img').css({width: 800, height: 400});
     $('.jumbotron').css({padding: 0});
   }
   else {
-    $('.jumbotron').html('<img src="./assets/images/correct1.gif" />');
+    $('.jumbotron').html('<img src="./assets/images/wrong1.gif" />'); //Else, change this code
     $('img').css({width: 800, height: 400});
     $('.jumbotron').css({padding: 0});
   }
+}
 })
 
+/*
 $('#option1').on("click", function () {
   $('.jumbotron').html('<img src="./assets/images/correct1.gif" />');
   $('img').css({width: 800, height: 400});
@@ -82,14 +70,14 @@ $('#option4').on("click", function () {
   $('img').css({width: 800, height: 400});
   $('.jumbotron').css({padding: 0});
 })
-
+*/
 
 function change () {
   var newDiv = ($('<div/>').addClass('text-center'));
   var newH1 = ($('<h1/>').attr('id', 'title').text(questions[currentQ].question));
   newDiv.append(newH1);
   for( var i = 0; i < questions[currentQ].options.length; i++){
-    var option = ($('<input type="button" />').attr('id', 'option' + (i+1)).val(questions[currentQ].options[i]));
+    var option = ($('<input type="button" />').addClass('option').val(questions[currentQ].options[i]));
     newDiv.append(option);
   }
   $('.jumbotron').html(newDiv);
