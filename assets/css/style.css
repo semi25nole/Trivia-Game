@@ -20,9 +20,9 @@ body{
 	width: 800px;
 }
 
-input {
+#option {
 	position: relative;
-	top: 25px;
+	top: 275px;
 }
 
 button:hover {
@@ -55,4 +55,14 @@ button:hover {
 #title {
 	font-family: papyrus, cursive;
 	font-weight: bold;
+	position: relative;
+	top: 10px;
+}
+
+#correct, #incorrect {
+	font-weight: bold;
+	font-size: 24px;
+	color: maroon;
+	background-color: grey;
+	opacity: 0.7;
 }
