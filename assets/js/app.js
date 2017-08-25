@@ -31,6 +31,7 @@ $(document).ready(function() {
     var currentQ = 0;
     var correct = 1;
     var incorrect = 1;
+    var total = correct + incorrect;
 
 
 
@@ -48,40 +49,36 @@ $(document).ready(function() {
     });
 
 
-    change();
     next();
-    
+
+
 
     $(document).on("click", ".option", function() { // On the click of button with class .option
         if ($(this).val() === questions[0].answer || $(this).val() === questions[1].answer || $(this).val() === questions[2].answer || $(this).val() === questions[3].answer ||
             $(this).val() === questions[4].answer) {
             $('.jumbotron').html('<img src="./assets/images/correct1.gif" />'); //Change this code
-            $('img').css({ width: 800, height: 400 });
+            $('img').css({ width: 800, height: 350 });
             $('.jumbotron').css({ padding: 0 });
             $('#correct').html("Correct: " + correct++);
 
         } else {
 
             $('.jumbotron').html('<img src="./assets/images/wrong1.gif" />'); //Else, change this code
-            $('img').css({ width: 800, height: 400 });
+            $('img').css({ width: 800, height: 350 });
             $('.jumbotron').css({ padding: 0 });
             $('#incorrect').html("Incorrect: " + incorrect++);
         }
-        setTimeout(next, 6000);
 
+        setTimeout(next, 2000);
     });
 
-
-    function change() {
-        var newDiv = ($('<div/>').addClass('text-center'));
-        var newH1 = ($('<h1/>').attr('id', 'title').text(questions[currentQ].question));
-        newDiv.append(newH1);
-        for (var i = 0; i < questions[currentQ].options.length; i++) {
-            var option = ($('<input type="button" />').addClass('option').val(questions[currentQ].options[i]));
-            newDiv.append(option);
-        }
-        $('.jumbotron').html(newDiv);
-    }
+    function restart() {
+        $('.jumbotron').empty().append("<button>Care to Play Again?</button>");
+        $('button').on("click", function() {
+            $(this).html('<img src="./assets/images/restart.gif" />');
+        })
+        $('img').css({ width: 800, height: 350 });
+    };
 
     function next() {
         var newDiv = ($('<div/>').addClass('text-center'));
@@ -94,5 +91,6 @@ $(document).ready(function() {
         $('.jumbotron').html(newDiv);
         currentQ++;
     }
+
 
 });
