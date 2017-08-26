@@ -31,7 +31,7 @@ $(document).ready(function() {
     var currentQ = 0;
     var correct = 1;
     var incorrect = 1;
-    
+
 
 
 
@@ -69,16 +69,22 @@ $(document).ready(function() {
             $('#incorrect').html("Incorrect: " + incorrect++);
         }
 
-        setTimeout(next, 2000);
+        setTimeout(next, 4000);
 
     });
-
-
 
     function restart() {
         $('.jumbotron').empty().append("<button>Care to Play Again?</button>");
         $('button').on("click", function() {
-            change();
+            var newDiv = ($('<div/>').addClass('text-center'));
+            var newH1 = ($('<h1/>').attr('id', 'title').text(questions[currentQ].question));
+            newDiv.append(newH1);
+            for (var i = 0; i < questions[currentQ].options.length; i++) {
+                var option = ($('<input type="button" />').addClass('option').val(questions[currentQ].options[i]));
+                newDiv.append(option);
+            }
+            $('.jumbotron').html(newDiv);
+            currentQ++;
         })
         $('img').css({ width: 800, height: 350 });
     };
@@ -94,6 +100,4 @@ $(document).ready(function() {
         $('.jumbotron').html(newDiv);
         currentQ++;
     }
-
-
 });
