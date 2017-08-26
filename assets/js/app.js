@@ -1,3 +1,4 @@
+//Once the document loads, run this code
 $(document).ready(function() {
 
     var questions = [{
@@ -27,52 +28,29 @@ $(document).ready(function() {
         },
     ];
 
-
     var currentQ = 0;
     var correct = 1;
     var incorrect = 1;
 
 
 
+    //This section contains the music player
+    var audioElement = document.createElement("audio");
+    audioElement.setAttribute("src", "./assets/music/gott.mp3");
 
 
-    var audioElement = document.createElement("audio"); //Here I am creating a new variable called "audio"
-    audioElement.setAttribute("src", "./assets/music/gott.mp3"); //Here I am setting that new variable to the source which holds the theme song
-
-
-    $(".theme-button").on("click", function() { //Once the user presses the Play Theme button, the song will play
+    $(".theme-button").on("click", function() {
         audioElement.play();
     });
 
-    $(".pause-button").on("click", function() { //Once the user presses the Pause Theme btton, the song will pause
+    $(".pause-button").on("click", function() {
         audioElement.pause();
     });
 
 
-    next();
 
 
-
-    $(document).on("click", ".option", function() { // On the click of button with class .option
-        if ($(this).val() === questions[0].answer || $(this).val() === questions[1].answer || $(this).val() === questions[2].answer || $(this).val() === questions[3].answer ||
-            $(this).val() === questions[4].answer) {
-            $('.jumbotron').html('<img src="./assets/images/correct1.gif" />'); //Change this code
-            $('img').css({ width: 800, height: 350 });
-            $('.jumbotron').css({ padding: 0 });
-            $('#correct').html("Correct: " + correct++);
-
-        } else {
-
-            $('.jumbotron').html('<img src="./assets/images/wrong1.gif" />'); //Else, change this code
-            $('img').css({ width: 800, height: 350 });
-            $('.jumbotron').css({ padding: 0 });
-            $('#incorrect').html("Incorrect: " + incorrect++);
-        }
-
-        setTimeout(next, 4000);
-
-    });
-
+    //This function will restart the game
     function restart() {
         $('.jumbotron').empty().append("<button>Care to Play Again?</button>");
         $('button').on("click", function() {
@@ -89,6 +67,10 @@ $(document).ready(function() {
         $('img').css({ width: 800, height: 350 });
     };
 
+
+
+
+    //This function, when called will display the next question with the button options for the user to select
     function next() {
         var newDiv = ($('<div/>').addClass('text-center'));
         var newH1 = ($('<h1/>').attr('id', 'title').text(questions[currentQ].question));
@@ -100,4 +82,44 @@ $(document).ready(function() {
         $('.jumbotron').html(newDiv);
         currentQ++;
     }
+
+
+
+
+    //We are calling the next function to begin the game
+    next();
+
+
+
+
+
+    //This is the game; on the click of button, if it is equal to the answer in the array, display the appropriate gif
+    $(document).on("click", ".option", function() {
+        if ($(this).val() === questions[0].answer || $(this).val() === questions[1].answer || $(this).val() === questions[2].answer || $(this).val() === questions[3].answer ||
+            $(this).val() === questions[4].answer) {
+            $('.jumbotron').html('<img src="./assets/images/correct1.gif" />');
+            $('img').css({ width: 800, height: 350 });
+            $('.jumbotron').css({ padding: 0 });
+            $('#correct').html("Correct: " + correct++);
+
+        } else {
+
+            $('.jumbotron').html('<img src="./assets/images/wrong1.gif" />');
+            $('img').css({ width: 800, height: 350 });
+            $('.jumbotron').css({ padding: 0 });
+            $('#incorrect').html("Incorrect: " + incorrect++);
+
+        }
+
+        if (currentQ++ == questions.length) {
+            $('.jumbotron').empty().append("<button>Care to Play Again?</button>");
+            $('button').on("click", function() {
+                restart();
+            })
+        }
+
+        setTimeout(next, 4000); //This is our timeout feature, this will cycle through the gifs after 4 seconds and display the next question group
+
+    })
+
 });

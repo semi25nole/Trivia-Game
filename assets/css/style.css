@@ -1,68 +1,71 @@
-header{
-	text-align: center;
-	font-family: 'Cormorant SC', serif;
-	font-size: 80px;
-	font-weight: bold;
-	color: black;
-	opacity: 0.6;
+header {
+    text-align: center;
+    font-family: 'Cormorant SC', serif;
+    font-size: 80px;
+    font-weight: bold;
+    color: black;
+    opacity: 0.6;
 }
 
-body{
-	background-image: url("../images/got.jpg");
-	background-repeat: none;
+body {
+    background-image: url("../images/got.jpg");
+    background-repeat: none;
 }
 
 .jumbotron {
-	position: relative;
-	top: 25px;
-	right: 75px;
-	height: 350px;
-	width: 800px;
+    position: relative;
+    top: 25px;
+    right: 75px;
+    height: 350px;
+    width: 800px;
 }
 
 #option {
-	position: relative;
-	top: 275px;
+    position: relative;
+    top: 275px;
 }
 
 button:hover {
-	box-shadow: 3px 3px 2px black;
+    box-shadow: 3px 3px 2px black;
 }
 
 .btn-xs {
-	bottom: 120px;
-	left: 350px;
-	opacity: 0.7;
+    bottom: 120px;
+    left: 350px;
+    opacity: 0.7;
 }
 
 #top {
-	position: relative;
-	clear: both;
+    position: relative;
+    clear: both;
 }
 
 #bottom {
-	position: relative;;
-	clear: both;
+    position: relative;
+    ;
+    clear: both;
 }
 
 .start-button {
-	position: absolute;
-	bottom: 150px;
-	left: 350px;
-	z-index: 15;
+    position: absolute;
+    bottom: 150px;
+    left: 350px;
+    z-index: 15;
 }
 
 #title {
-	font-family: papyrus, cursive;
-	font-weight: bold;
-	position: relative;
-	top: 10px;
+    font-family: papyrus, cursive;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
 }
 
-#correct, #incorrect, #tot {
-	font-weight: bold;
-	font-size: 24px;
-	color: maroon;
-	background-color: grey;
-	opacity: 0.7;
+#correct,
+#incorrect,
+#tot {
+    font-weight: bold;
+    font-size: 24px;
+    color: maroon;
+    background-color: grey;
+    opacity: 0.7;
 }
