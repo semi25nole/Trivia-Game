@@ -59,7 +59,7 @@ button:hover {
 	top: 10px;
 }
 
-#correct, #incorrect {
+#correct, #incorrect, #tot {
 	font-weight: bold;
 	font-size: 24px;
 	color: maroon;

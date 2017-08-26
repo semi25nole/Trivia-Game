@@ -31,7 +31,7 @@ $(document).ready(function() {
     var currentQ = 0;
     var correct = 1;
     var incorrect = 1;
-    var total = correct + incorrect;
+    
 
 
 
@@ -70,12 +70,15 @@ $(document).ready(function() {
         }
 
         setTimeout(next, 2000);
+
     });
+
+
 
     function restart() {
         $('.jumbotron').empty().append("<button>Care to Play Again?</button>");
         $('button').on("click", function() {
-            $(this).html('<img src="./assets/images/restart.gif" />');
+            change();
         })
         $('img').css({ width: 800, height: 350 });
     };
