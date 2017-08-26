@@ -111,13 +111,6 @@ $(document).ready(function() {
 
         }
 
-        if (currentQ++ == questions.length) {
-            $('.jumbotron').empty().append("<button>Care to Play Again?</button>");
-            $('button').on("click", function() {
-                restart();
-            })
-        }
-
         setTimeout(next, 4000); //This is our timeout feature, this will cycle through the gifs after 4 seconds and display the next question group
 
     })
